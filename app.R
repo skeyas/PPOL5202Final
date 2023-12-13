@@ -60,7 +60,7 @@ drug_stats_county_nj <- drug_stats_county_nj %>% mutate(Year=year) %>% left_join
 ui <- shinyUI(navbarPage("The Opioid Crisis in Visuals",
            header=actionButton(inputId='ab1', label="GitHub", 
                                icon = icon("th"), 
-                               onclick ="window.open('https://github.com/skeyas/PPOL5202Finall', '_blank')"),
+                               onclick ="window.open('https://github.com/skeyas/PPOL5202Final', '_blank')"),
           tabPanel("Overview",
             fluidPage(
               tags$h3("According to the CDC, the number of people who died from a drug overdose 
