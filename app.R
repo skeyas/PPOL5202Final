@@ -58,6 +58,9 @@ nj_county_ods <- nj_county_ods %>% left_join(counties, by="county_name") %>%
 drug_stats_county_nj <- drug_stats_county_nj %>% mutate(Year=year) %>% left_join(nj_county_ods, by=c("year", "county_name"))
 
 ui <- shinyUI(navbarPage("The Opioid Crisis in Visuals",
+           header=actionButton(inputId='ab1', label="GitHub", 
+                               icon = icon("th"), 
+                               onclick ="window.open('https://github.com/skeyas/PPOL5202Finall', '_blank')"),
           tabPanel("Overview",
             fluidPage(
               tags$h3("According to the CDC, the number of people who died from a drug overdose 
@@ -67,6 +70,7 @@ ui <- shinyUI(navbarPage("The Opioid Crisis in Visuals",
                    target = "_blank",
                    href = "https://www.cdc.gov/opioids/basics/epidemic.html"
                  )),
+              p("This has become a dangerous epidemic and tracking it is crucial for public health work."), 
               p("This dashboard displays New Jersey's drug overdose 
                   statistics, contextualized by other states, using information
                 from the CDC and NJ Advance Media."),
